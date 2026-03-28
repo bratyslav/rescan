@@ -10,12 +10,11 @@ java {
 }
 
 dependencies {
-    // Gives your plugin access to the android{} / kotlin{} DSL
     compileOnly("com.android.tools.build:gradle:8.9.3")
     compileOnly("org.jetbrains.kotlin:kotlin-gradle-plugin:2.0.21")
+    implementation("com.google.dagger:hilt-android-gradle-plugin:2.56.1")
 }
 
-// Register your convention plugins
 gradlePlugin {
     plugins {
         register("androidLibrary") {
@@ -25,6 +24,10 @@ gradlePlugin {
         register("androidApplication") {
             id = "com.bratyslav.rescan.android.application"
             implementationClass = "com.bratyslav.rescan.AndroidApplicationConventionPlugin"
+        }
+        register("hilt") {
+            id = "com.bratyslav.rescan.hilt"
+            implementationClass = "com.bratyslav.rescan.HiltConventionPlugin"
         }
     }
 }

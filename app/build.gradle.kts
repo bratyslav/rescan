@@ -1,5 +1,6 @@
 plugins {
     id("com.bratyslav.rescan.android.application")
+    id("com.bratyslav.rescan.hilt")
 }
 
 android {
