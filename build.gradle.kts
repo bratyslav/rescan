@@ -5,4 +5,5 @@ plugins {
     alias(libs.plugins.kotlin.compose) apply false // org.jetbrains.kotlin.plugin.compose
     alias(libs.plugins.ksp) apply false // com.google.devtools.ksp
     alias(libs.plugins.hilt) apply false // com.google.dagger.hilt.android
+    alias(libs.plugins.gms) apply false // com.google.gms.google-services
 }
