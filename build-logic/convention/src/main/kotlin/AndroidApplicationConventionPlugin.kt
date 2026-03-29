@@ -22,7 +22,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                 compileSdk = 36
 
                 defaultConfig {
-                    applicationId = "com.myapp"
+                    applicationId = "com.bratyslav.rescan"
                     minSdk = 26
                     targetSdk = 35
                     versionCode = 1

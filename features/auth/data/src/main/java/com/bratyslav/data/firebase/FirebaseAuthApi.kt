@@ -1,5 +1,6 @@
 package com.bratyslav.data.firebase
 
+import android.util.Log
 import com.bratyslav.domain.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -13,13 +14,13 @@ import kotlinx.coroutines.tasks.await
 @Singleton
 class FirebaseAuthApi @Inject constructor() {
 
-    private val auth: FirebaseAuth = FirebaseAuth.getInstance()
+    private val auth: FirebaseAuth by lazy { FirebaseAuth.getInstance() }
 
-    /** Emits the current user whenever auth state changes (including the first emission). */
     fun authStateFlow(): Flow<User?> = callbackFlow {
         val listener = FirebaseAuth.AuthStateListener { firebaseAuth ->
-                trySend(firebaseAuth.currentUser?.toDomainUser())
-            }
+            Log.d("Debugging Log", "${firebaseAuth.currentUser?.toDomainUser()}")
+            trySend(firebaseAuth.currentUser?.toDomainUser())
+        }
         auth.addAuthStateListener(listener)
         awaitClose { auth.removeAuthStateListener(listener) }
     }

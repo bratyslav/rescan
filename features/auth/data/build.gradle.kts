@@ -24,4 +24,8 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     // Firebase Auth
     implementation(libs.firebase.auth)
+    // Firebase Credential Manager
+    implementation(libs.androidx.credentials)
+    implementation(libs.androidx.credentials.play.services.auth)
+    implementation(libs.googleid)
 }
