@@ -16,7 +16,7 @@ import androidx.navigation.compose.rememberNavController
 import com.bratyslav.auth.screens.AuthScreen
 import com.bratyslav.rescan.SessionState
 import com.bratyslav.rescan.SessionViewModel
-import com.bratyslav.scanner.ui.ScannerRoute
+import com.bratyslav.scanner.screens.ScannerScreen
 
 @Composable
 fun ReScanNavHost(
@@ -67,7 +67,7 @@ fun ReScanNavHost(
             )
         }
         composable<ScannerDestination> {
-            ScannerRoute()
+            ScannerScreen()
         }
     }
 }

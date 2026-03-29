@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- Cache dir: /data/data/…/cache/camera -->
+    <cache-path name="camera" path="camera/" />
+    <!-- Optional (if you later prefer filesDir): /data/data/…/files/images -->
+    <files-path name="images" path="images/" />
+</paths>
